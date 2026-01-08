@@ -25,23 +25,24 @@
 
 ## 📁 Структура проекта
 
+```text
 tic_tac_toe_task/
-│
-├─ app.py
-├─ bot.py
-├─ requirements.txt
-├─ .gitignore
-├─ README.md
-│
-├─ templates/
-│   └─ index.html
-│
-└─ static/
-    ├─ style.css
-    ├─ script.js
-    └─ img/
-        ├─ rose.png
-        └─ olive.png
+├── app.py
+├── bot.py
+├── requirements.txt
+├── .gitignore
+├── README.md
+├── templates/
+│   └── index.html
+└── static/
+    ├── style.css
+    ├── script.js
+    └── img/
+        ├── rose.png
+        └── olive.png
+```
+
+
 
 ------------------------------------------------------------
 

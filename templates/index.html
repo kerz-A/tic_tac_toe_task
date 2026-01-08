@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Крестики-нолики</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="page">
+    <header class="header">
+        <h1>Крестики-нолики</h1>
+        <p class="subtitle">Небольшая пауза для себя</p>
+    </header>
+
+    <main class="main">
+        <div class="game-container">
+            <div class="status-panel">
+                <div id="status-text">Ваш ход — вы играете крестиками</div>
+            </div>
+
+            <div class="board" id="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+
+            <div class="controls">
+                <button id="restart-btn" class="btn secondary hidden">Сыграть ещё раз</button>
+            </div>
+
+            <div id="promo-block" class="promo hidden">
+                <p class="promo-title">Поздравляем! Вы выиграли 🎉</p>
+                <p class="promo-text">Ваш промокод на скидку:</p>
+                <div id="promo-code" class="promo-code"></div>
+                <p class="promo-note">Скопируйте код и используйте при оформлении заказа.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <small>Небольшая игра для приятной паузы</small>
+    </footer>
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>

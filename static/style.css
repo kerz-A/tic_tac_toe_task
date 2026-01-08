@@ -1,0 +1,208 @@
+:root {
+    --bg: #fdf7fb;
+    --card-bg: #ffffff;
+    --accent: #e48fb1;
+    --accent-soft: #f5c7dd;
+    --text-main: #3b2f3c;
+    --text-muted: #7b6f80;
+    --border: #e3d7e8;
+    --danger: #d46a6a;
+    --success: #5a9b7b;
+    --shadow-soft: 0 12px 30px rgba(0, 0, 0, 0.06);
+    --radius-lg: 18px;
+    --radius-md: 12px;
+    --radius-sm: 8px;
+    --transition-fast: 0.18s ease-out;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
+    background: radial-gradient(circle at top, #ffeaf5 0, #fdf7fb 40%, #f7f2fa 100%);
+    color: var(--text-main);
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 16px;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 28px;
+    letter-spacing: 0.03em;
+}
+
+.subtitle {
+    margin-top: 8px;
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.game-container {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-soft);
+    padding: 24px 20px 20px;
+    max-width: 420px;
+    width: 100%;
+}
+
+.status-panel {
+    margin-bottom: 16px;
+    padding: 10px 12px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(90deg, #fbe3f0, #f7edf8);
+    color: var(--text-main);
+    font-size: 14px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.cell {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0; /* скрываем текст, используем спрайты */
+    background: #fdf9ff;
+    cursor: pointer;
+    transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+
+.cell:hover {
+    background: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.04);
+}
+
+.cell.disabled {
+    cursor: default;
+    opacity: 0.7;
+    box-shadow: none;
+    transform: none;
+}
+
+/* Спрайты */
+.cell.x {
+    background-image: url('/static/img/rose.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cell.o {
+    background-image: url('/static/img/olive.png');
+    background-size: 70%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.cell.win {
+    background-color: #fdf2f7;
+    border-color: var(--accent);
+    box-shadow: 0 0 12px rgba(228, 143, 177, 0.6);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.btn {
+    border: none;
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.btn.secondary {
+    background: #f3edf7;
+    color: var(--text-main);
+}
+
+.btn.secondary:hover {
+    background: #ebe1f3;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
+}
+
+.hidden {
+    display: none;
+}
+
+.promo {
+    margin-top: 12px;
+    padding: 14px 12px;
+    border-radius: var(--radius-md);
+    background: #f5fff9;
+    border: 1px solid #cfe9dd;
+    text-align: center;
+}
+
+.promo-title {
+    margin: 0 0 6px;
+    font-weight: 600;
+    color: var(--success);
+}
+
+.promo-text {
+    margin: 0 0 4px;
+    font-size: 14px;
+}
+
+.promo-code {
+    display: inline-block;
+    margin: 4px 0 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    background: #ffffff;
+    border: 1px dashed #9bc8b0;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    font-size: 16px;
+}
+
+.promo-note {
+    margin: 0;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.footer {
+    margin-top: 16px;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+}
